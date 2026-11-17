@@ -225,6 +225,18 @@ html[data-mood="minimal"] .card:hover .thumb > * { filter: none; }
 .play { width: clamp(4rem, 9vw, 7rem); aspect-ratio: 1; border-radius: 50%; border: 1px solid #fff; font-size: 1.6rem; padding-left: .3rem; transition: transform .4s var(--ease), background .4s; }
 .play:hover { transform: scale(1.08); background: #fff; color: #000; }
 
+/* ---------- Acts ---------- */
+.acts-list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; align-items: baseline;
+  font-size: clamp(1.6rem, 4.2vw, 4rem); line-height: 1.08; font-weight: var(--title-weight); letter-spacing: var(--title-track); text-transform: uppercase; }
+.acts-list li { transition: color .3s var(--ease), opacity .3s var(--ease); cursor: default; }
+.acts-list li:not(:last-child)::after { content: "✦"; font-size: .4em; vertical-align: middle; margin: 0 .55em; color: var(--accent); }
+.acts-list:hover li { opacity: .35; }
+.acts-list li:hover { opacity: 1; color: var(--accent); }
+.acts-list li:nth-child(3n + 2) { color: transparent; -webkit-text-stroke: 1px var(--fg); }
+.acts-list li:nth-child(3n + 2):hover { color: var(--accent); -webkit-text-stroke: 0; }
+html[data-mood="minimal"] .acts-list li:nth-child(3n + 2) { color: var(--fg); -webkit-text-stroke: 0; font-style: italic; font-weight: 300; }
+html[data-mood="minimal"] .acts-list { font-weight: 500; }
+
 /* ---------- About ---------- */
 .about-grid { display: grid; grid-template-columns: 4fr 7fr; gap: clamp(1.5rem, 5vw, 5rem); align-items: start; }
 .portrait { aspect-ratio: 4 / 5; border-radius: var(--radius); border: 1px solid var(--line); display: grid; place-items: end start; padding: 1rem; color: var(--muted);
